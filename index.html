@@ -10,6 +10,7 @@
     <title>Flora — Fresh Flower Bouquets</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="favicon.ico" sizes="32x32 16x16" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -560,6 +561,111 @@
       </div>
     </footer>
 
+    <div class="modal-backdrop" id="product-modal">
+      <div class="modal product-modal">
+        <button
+          class="modal-close-button"
+          type="button"
+          aria-label="Close product details"
+        >
+          <svg class="modal-close-icon" width="32" height="32">
+            <use href="images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <img
+          class="product-modal-image"
+          src="images/bestseller-lavender-dream.webp"
+          alt="Lavender Dream bouquet of purple flowers in a glass vase"
+          width="536"
+          height="572"
+        />
+        <div class="product-modal-content">
+          <h2 class="product-modal-title">Lavender Dream</h2>
+          <p class="product-modal-price">$55</p>
+          <p class="product-modal-text">
+            Bouquet with lavender, lisianthus, and roses — ideal for those who
+            love deep hues and gentle fragrance.
+          </p>
+          <form class="product-modal-form" name="add-to-cart">
+            <button class="button product-modal-button" type="submit">
+              Add to Cart
+            </button>
+            <input
+              class="product-modal-quantity"
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+              aria-label="Quantity"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="order-modal">
+      <div class="modal order-modal">
+        <button
+          class="modal-close-button"
+          type="button"
+          aria-label="Close order form"
+        >
+          <svg class="modal-close-icon" width="32" height="32">
+            <use href="images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <h2 class="order-modal-title">Order</h2>
+        <form class="order-form" name="order">
+          <div class="order-form-field">
+            <label class="order-form-label" for="order-name">Name*</label>
+            <input
+              class="order-form-input"
+              type="text"
+              name="name"
+              id="order-name"
+              placeholder="Ann"
+              required
+            />
+          </div>
+          <div class="order-form-field">
+            <label class="order-form-label" for="order-phone">Phone*</label>
+            <input
+              class="order-form-input"
+              type="tel"
+              name="phone"
+              id="order-phone"
+              placeholder="+1 (555) 123-4567"
+              required
+            />
+          </div>
+          <div class="order-form-field">
+            <label class="order-form-label" for="order-address">Address*</label>
+            <input
+              class="order-form-input"
+              type="text"
+              name="address"
+              id="order-address"
+              placeholder="456 Floral Ave, Sydney NSW 2000 AU"
+              required
+            />
+          </div>
+          <div class="order-form-field">
+            <label class="order-form-label" for="order-message">Message</label>
+            <textarea
+              class="order-form-input order-form-textarea"
+              name="message"
+              id="order-message"
+              placeholder="Type your message..."
+            ></textarea>
+          </div>
+          <button class="button order-form-button" type="submit">
+            Go to Checkout
+          </button>
+        </form>
+      </div>
+    </div>
+
     <script src="js/menu.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
