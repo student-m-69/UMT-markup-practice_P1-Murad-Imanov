@@ -1,7 +1,7 @@
 # Flora
 
 Responsive HTML/CSS landing page for the Flora flower shop, built from the
-[Figma design](https://www.figma.com/design/zEp8BvPrf01rSdrekv9cXc/Flora--Copy-?node-id=5999-10563)
+[Figma design](https://www.figma.com/design/2Tj16H7IO7dq1ViTvIh57V/Flora?node-id=8203-59903&t=ICMnkHXiu1rtWNrc-0)
 as part of the UMT markup practice course (project scope 1, topics 1–12).
 
 ## Features
@@ -12,6 +12,7 @@ as part of the UMT markup practice course (project scope 1, topics 1–12).
 - SVG sprite (`images/icons.svg`) connected via `<svg><use>`
 - Multi-layer hero background (gradient + image)
 - Mobile menu opened with the `is-open` class
+- Product Details and Order modals opened with the `is-open` class
 - Images optimized as WebP
 - Animate.css for the hero entrance animation
 
@@ -20,4 +21,5 @@ as part of the UMT markup practice course (project scope 1, topics 1–12).
 - `index.html` — page markup
 - `css/styles.css` — all styles (mobile-first)
 - `js/menu.js` — mobile menu toggle
+- `js/modal.js` — product details and order modal toggles
 - `images/` — optimized images, SVG sprite, favicon
