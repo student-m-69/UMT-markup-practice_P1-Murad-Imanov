@@ -2,7 +2,7 @@
 
 Responsive HTML/CSS landing page for the Flora flower shop, built from the
 [Figma design](https://www.figma.com/design/2Tj16H7IO7dq1ViTvIh57V/Flora?node-id=8203-59903&t=ICMnkHXiu1rtWNrc-0)
-as part of the UMT markup practice course (project scope 1, topics 1–12).
+as part of the UMT markup practice course (project scopes 1–2, topics 1–20).
 
 ## Features
 
@@ -16,10 +16,43 @@ as part of the UMT markup practice course (project scope 1, topics 1–12).
 - Images optimized as WebP
 - Animate.css for the hero entrance animation
 
+## Stage 2 features
+
+- Retina graphics: `srcset` with @1x/@2x for content images, `<picture>`
+  breakpoint sources, `min-resolution: 2dppx` media queries for backgrounds
+- Subscribe form in the footer and order form in the modal with semantic
+  markup (`label`, descriptive `name`, `type="submit"`, placeholders) and a
+  custom license-agreement checkbox styled via the SVG sprite
+- Bouquets, bestsellers, and reviews lists rendered fully dynamically from
+  API data with template strings and a single `insertAdjacentHTML` call
+- HTTP requests through `axios` with `async/await` and error handling
+- Load More pagination (`_page`/`_limit` params) and category filtering;
+  filter changes reset the page, no duplicated items, empty/end states shown
+
+## API
+
+The live page on GitHub Pages reads data from this repo's `db.json` through
+[my-json-server](https://my-json-server.typicode.com/student-m-69/UMT-markup-practice_P1-Murad-Imanov/bouquets),
+so the mock API is publicly available for review.
+
+To run locally with json-server instead:
+
+```bash
+npx json-server@0.17.4 --watch db.json --port 3000
+```
+
+Then serve the site from the project root (for example
+`npx serve` or `python3 -m http.server 8080`) and open it via
+`http://localhost:8080` — the app automatically switches to
+`http://localhost:3000` when opened on localhost.
+
 ## Structure
 
 - `index.html` — page markup
 - `css/styles.css` — all styles (mobile-first)
 - `js/menu.js` — mobile menu toggle
-- `js/modal.js` — product details and order modal toggles
-- `images/` — optimized images, SVG sprite, favicon
+- `js/modal.js` — product details and order modal logic
+- `js/slider.js` — bestsellers and reviews slider helper
+- `js/app.js` — API requests, dynamic rendering, pagination, filters
+- `db.json` — mock API data (bouquets, bestsellers, reviews)
+- `images/` — optimized images with @2x retina versions, SVG sprite, favicon

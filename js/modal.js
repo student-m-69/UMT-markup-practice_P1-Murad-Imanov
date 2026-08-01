@@ -1,9 +1,10 @@
 (() => {
   const productModal = document.querySelector("#product-modal");
   const orderModal = document.querySelector("#order-modal");
-  const productCards = document.querySelectorAll(
-    ".bestsellers-item, .bouquets-item",
-  );
+  const modalImage = productModal.querySelector(".product-modal-image");
+  const modalTitle = productModal.querySelector(".product-modal-title");
+  const modalPrice = productModal.querySelector(".product-modal-price");
+  const modalText = productModal.querySelector(".product-modal-text");
 
   const openModal = (modal) => {
     modal.classList.add("is-open");
@@ -15,9 +16,24 @@
     document.body.classList.remove("is-scroll-locked");
   };
 
-  productCards.forEach((card) =>
-    card.addEventListener("click", () => openModal(productModal)),
-  );
+  const handleCardClick = (event) => {
+    const card = event.target.closest(".bestsellers-item, .bouquets-item");
+    if (!card) {
+      return;
+    }
+    const { name, price, description, image, image2x, alt } = card.dataset;
+    modalTitle.textContent = name;
+    modalPrice.textContent = `$${price}`;
+    modalText.textContent = description;
+    modalImage.src = image;
+    modalImage.srcset = `${image} 1x, ${image2x} 2x`;
+    modalImage.alt = alt;
+    openModal(productModal);
+  };
+
+  document
+    .querySelectorAll(".bestsellers-list, .bouquets-list")
+    .forEach((list) => list.addEventListener("click", handleCardClick));
 
   [productModal, orderModal].forEach((modal) => {
     modal

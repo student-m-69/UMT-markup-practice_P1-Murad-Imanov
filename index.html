@@ -141,61 +141,63 @@
               freshest blooms to create stunning pieces for every occasion.
             </p>
           </div>
-          <img
-            class="about-image"
-            src="images/about-florist.webp"
-            alt="Florist in a green apron arranging white peony flowers in a shop"
-            width="628"
-            height="428"
-          />
+          <picture class="about-picture">
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                images/about-florist.webp    1x,
+                images/about-florist@2x.webp 2x
+              "
+            />
+            <img
+              class="about-image"
+              src="images/about-florist-mobile.webp"
+              srcset="
+                images/about-florist-mobile.webp    1x,
+                images/about-florist-mobile@2x.webp 2x
+              "
+              alt="Florist in a green apron arranging white peony flowers in a shop"
+              width="628"
+              height="428"
+            />
+          </picture>
         </div>
       </section>
 
       <section class="bestsellers" id="bestsellers">
         <div class="container">
           <h2 class="section-title bestsellers-title">Top-Selling Bouquets</h2>
-          <ul class="bestsellers-list">
-            <li class="bestsellers-item">
-              <img
-                class="card-image"
-                src="images/bestseller-spring-elegance.webp"
-                alt="Spring Elegance bouquet of pink and white spring flowers with ribbons"
-                width="405"
-                height="320"
-              />
-              <h3 class="card-name">Spring Elegance</h3>
-              <p class="card-price">$35</p>
-            </li>
-            <li class="bestsellers-item">
-              <img
-                class="card-image"
-                src="images/bestseller-berry-chic.webp"
-                alt="Berry Chic bouquet with roses, berries, and dark greenery"
-                width="405"
-                height="320"
-              />
-              <h3 class="card-name">Berry Chic</h3>
-              <p class="card-price">$40</p>
-            </li>
-            <li class="bestsellers-item">
-              <img
-                class="card-image"
-                src="images/bestseller-lavender-dream.webp"
-                alt="Lavender Dream bouquet of purple flowers in a glass vase"
-                width="405"
-                height="320"
-              />
-              <h3 class="card-name">Lavender Dream</h3>
-              <p class="card-price">$55</p>
-            </li>
-          </ul>
+          <ul class="bestsellers-list"></ul>
           <div class="slider-controls">
             <ul class="slider-dots">
-              <li class="slider-dot slider-dot-current"></li>
-              <li class="slider-dot"></li>
-              <li class="slider-dot"></li>
-              <li class="slider-dot"></li>
-              <li class="slider-dot"></li>
+              <li class="slider-dots-item">
+                <button
+                  class="slider-dot slider-dot-current"
+                  type="button"
+                  aria-label="Go to slide 1"
+                ></button>
+              </li>
+              <li class="slider-dots-item">
+                <button
+                  class="slider-dot"
+                  type="button"
+                  aria-label="Go to slide 2"
+                ></button>
+              </li>
+              <li class="slider-dots-item">
+                <button
+                  class="slider-dot"
+                  type="button"
+                  aria-label="Go to slide 3"
+                ></button>
+              </li>
+              <li class="slider-dots-item">
+                <button
+                  class="slider-dot"
+                  type="button"
+                  aria-label="Go to slide 4"
+                ></button>
+              </li>
             </ul>
             <div class="slider-buttons">
               <button
@@ -227,96 +229,43 @@
           <p class="bouquets-subtitle">
             Explore our stunning selection of fresh flower bouquets.
           </p>
-          <ul class="bouquets-list">
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-peach-meadow.webp"
-                alt="Peach Meadow bouquet of peach and pink flowers in a woven basket"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Peach Meadow</h3>
-              <p class="card-price">$55</p>
+          <ul class="bouquets-filters">
+            <li class="bouquets-filters-item">
+              <button
+                class="filter-button filter-button-current"
+                type="button"
+                data-category=""
+              >
+                All
+              </button>
             </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-blush-romance.webp"
-                alt="Blush Romance bouquet of soft pink roses arranged by a florist"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Blush Romance</h3>
-              <p class="card-price">$34</p>
+            <li class="bouquets-filters-item">
+              <button class="filter-button" type="button" data-category="roses">
+                Roses
+              </button>
             </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-pastel-garden.webp"
-                alt="Pastel Garden bouquet of mixed flowers in a big basket on a table"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Pastel Garden</h3>
-              <p class="card-price">$40</p>
+            <li class="bouquets-filters-item">
+              <button
+                class="filter-button"
+                type="button"
+                data-category="baskets"
+              >
+                Baskets
+              </button>
             </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-tulip-charm.webp"
-                alt="Tulip Charm bouquet of colorful flowers in a lilac wooden box"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Tulip Charm</h3>
-              <p class="card-price">$61</p>
+            <li class="bouquets-filters-item">
+              <button class="filter-button" type="button" data-category="mixed">
+                Mixed
+              </button>
             </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-berry-bloom.webp"
-                alt="Berry Bloom rustic bouquet of mixed color flowers in a vase"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Berry Bloom</h3>
-              <p class="card-price">$32</p>
-            </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-sweet-whisper.webp"
-                alt="Sweet Whisper basket filled with assorted pink flowers and a notecard"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Sweet Whisper</h3>
-              <p class="card-price">$40</p>
-            </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-field-joy.webp"
-                alt="Field Joy bouquet of wild flowers on an old wooden background"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Field Joy</h3>
-              <p class="card-price">$49</p>
-            </li>
-            <li class="bouquets-item">
-              <img
-                class="card-image bouquets-image"
-                src="images/bouquet-soft-bloom.webp"
-                alt="Soft Bloom vintage style bouquet wrapped in beige paper"
-                width="296"
-                height="296"
-              />
-              <h3 class="card-name">Soft Bloom</h3>
-              <p class="card-price">$37</p>
+            <li class="bouquets-filters-item">
+              <button class="filter-button" type="button" data-category="wild">
+                Wild
+              </button>
             </li>
           </ul>
+          <ul class="bouquets-list"></ul>
+          <p class="bouquets-message is-hidden"></p>
           <button class="button bouquets-button" type="button">
             Show More
           </button>
@@ -328,82 +277,7 @@
           <h2 class="section-title testimonials-title">
             What our clients says
           </h2>
-          <ul class="testimonials-list">
-            <li class="testimonials-item">
-              <p class="testimonials-quote">
-                "Flora made my anniversary unforgettable with their beautiful
-                arrangement!"
-              </p>
-              <p class="testimonials-author">Emma T.</p>
-            </li>
-            <li class="testimonials-item">
-              <p class="testimonials-quote">
-                Absolutely stunning bouquet! It looked even better than the
-                photo and arrived right on time.
-              </p>
-              <p class="testimonials-author">Daniel R.</p>
-            </li>
-            <li class="testimonials-item">
-              <p class="testimonials-quote">
-                The service was exceptional, and the flowers were fresh!
-              </p>
-              <p class="testimonials-author">Olivia M.</p>
-            </li>
-            <li class="testimonials-item">
-              <div class="testimonials-content">
-                <svg
-                  class="testimonials-stars"
-                  width="116"
-                  height="19"
-                  role="img"
-                  aria-label="Rated 5 out of 5 stars"
-                >
-                  <use href="images/icons.svg#icon-stars"></use>
-                </svg>
-                <p class="testimonials-quote">
-                  Ordered a last-minute gift and was amazed by how fast and
-                  professional the delivery was. Highly recommend!
-                </p>
-              </div>
-              <p class="testimonials-author">Julia K.</p>
-            </li>
-            <li class="testimonials-item">
-              <div class="testimonials-content">
-                <svg
-                  class="testimonials-stars"
-                  width="116"
-                  height="19"
-                  role="img"
-                  aria-label="Rated 5 out of 5 stars"
-                >
-                  <use href="images/icons.svg#icon-stars"></use>
-                </svg>
-                <p class="testimonials-quote">
-                  Every flower was perfect. You can feel the care and love in
-                  every bouquet.
-                </p>
-              </div>
-              <p class="testimonials-author">Mark S.</p>
-            </li>
-            <li class="testimonials-item">
-              <div class="testimonials-content">
-                <svg
-                  class="testimonials-stars"
-                  width="116"
-                  height="19"
-                  role="img"
-                  aria-label="Rated 5 out of 5 stars"
-                >
-                  <use href="images/icons.svg#icon-stars"></use>
-                </svg>
-                <p class="testimonials-quote">
-                  Flora helped make my friend's birthday extra special. She was
-                  blown away by the flowers!
-                </p>
-              </div>
-              <p class="testimonials-author">Natalie V.</p>
-            </li>
-          </ul>
+          <ul class="testimonials-list"></ul>
           <div class="testimonials-controls">
             <button
               class="slider-button"
@@ -473,13 +347,26 @@
               </li>
             </ul>
           </div>
-          <img
-            class="contact-image"
-            src="images/contact-florist.webp"
-            alt="Florist wrapping a fresh bouquet at the Flora flower shop counter"
-            width="1280"
-            height="720"
-          />
+          <picture class="contact-picture">
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                images/contact-florist.webp    1x,
+                images/contact-florist@2x.webp 2x
+              "
+            />
+            <img
+              class="contact-image"
+              src="images/contact-florist-mobile.webp"
+              srcset="
+                images/contact-florist-mobile.webp    1x,
+                images/contact-florist-mobile@2x.webp 2x
+              "
+              alt="Florist wrapping a fresh bouquet at the Flora flower shop counter"
+              width="1280"
+              height="720"
+            />
+          </picture>
         </div>
       </section>
     </main>
@@ -555,6 +442,24 @@
             </li>
           </ul>
         </div>
+        <form class="subscribe-form" name="subscribe">
+          <label class="subscribe-label" for="subscribe-email"
+            >Subscribe to our newsletter</label
+          >
+          <div class="subscribe-wrapper">
+            <input
+              class="subscribe-input"
+              type="email"
+              name="email"
+              id="subscribe-email"
+              placeholder="Enter your email"
+              required
+            />
+            <button class="button subscribe-button" type="submit">
+              Subscribe
+            </button>
+          </div>
+        </form>
         <div class="footer-credits">
           <p class="footer-copyright">© 2025 Flora. All rights reserved.</p>
         </div>
@@ -575,6 +480,10 @@
         <img
           class="product-modal-image"
           src="images/bestseller-lavender-dream.webp"
+          srcset="
+            images/bestseller-lavender-dream.webp    1x,
+            images/bestseller-lavender-dream@2x.webp 2x
+          "
           alt="Lavender Dream bouquet of purple flowers in a glass vase"
           width="536"
           height="572"
@@ -658,6 +567,28 @@
               placeholder="Type your message..."
             ></textarea>
           </div>
+          <div class="order-form-agreement">
+            <input
+              class="visually-hidden order-form-checkbox"
+              type="checkbox"
+              name="license"
+              id="order-license"
+              required
+            />
+            <label class="order-form-agreement-label" for="order-license">
+              <span class="order-form-checkbox-box">
+                <svg
+                  class="order-form-check-icon"
+                  width="14"
+                  height="14"
+                  aria-hidden="true"
+                >
+                  <use href="images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              I agree to the License Agreement
+            </label>
+          </div>
           <button class="button order-form-button" type="submit">
             Go to Checkout
           </button>
@@ -665,7 +596,10 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
