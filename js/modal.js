@@ -26,7 +26,11 @@
     modalPrice.textContent = `$${price}`;
     modalText.textContent = description;
     modalImage.src = image;
-    modalImage.srcset = `${image} 1x, ${image2x} 2x`;
+    if (image2x) {
+      modalImage.srcset = `${image} 1x, ${image2x} 2x`;
+    } else {
+      modalImage.removeAttribute("srcset");
+    }
     modalImage.alt = alt;
     openModal(productModal);
   };
