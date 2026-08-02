@@ -54,13 +54,6 @@
   const reviewCard = (review) => `
     <li class="testimonials-item">
       <div class="testimonials-content">
-        ${
-          review.rating === 5
-            ? `<svg class="testimonials-stars" width="116" height="19" role="img" aria-label="Rated 5 out of 5 stars">
-                <use href="images/icons.svg#icon-stars"></use>
-              </svg>`
-            : ""
-        }
         <p class="testimonials-quote">${review.text}</p>
       </div>
       <p class="testimonials-author">${review.author}</p>
