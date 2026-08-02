@@ -2,7 +2,7 @@
 
 Responsive HTML/CSS landing page for the Flora flower shop, built from the
 [Figma design](https://www.figma.com/design/2Tj16H7IO7dq1ViTvIh57V/Flora?node-id=8203-59903&t=ICMnkHXiu1rtWNrc-0)
-as part of the UMT markup practice course (project scopes 1–2, topics 1–20).
+as part of the UMT markup practice course (project scopes 1–3, full course).
 
 ## Features
 
@@ -31,20 +31,18 @@ as part of the UMT markup practice course (project scopes 1–2, topics 1–20).
 
 ## API
 
-The live page on GitHub Pages reads data from this repo's `db.json` through
-[my-json-server](https://my-json-server.typicode.com/student-m-69/UMT-markup-practice_P1-Murad-Imanov/bouquets),
-so the mock API is publicly available for review.
+The page is powered by the real [Flora backend](https://github.com/student-m-69/flora-backend)
+(Express + PostgreSQL + Sequelize) deployed at
+`https://flora-backend-imanov.onrender.com` — interactive API documentation
+is available at
+[`/api-docs`](https://flora-backend-imanov.onrender.com/api-docs).
 
-To run locally with json-server instead:
-
-```bash
-npx json-server@0.17.4 --watch db.json --port 3000
-```
-
-Then serve the site from the project root (for example
-`npx serve` or `python3 -m http.server 8080`) and open it via
+To run the full stack locally, clone the backend repository and start it on
+port 3000 (see its README — `npm start` with a local PostgreSQL, or simply
+`docker compose up`). Then serve this site from the project root (for
+example `npx serve` or `python3 -m http.server 8080`) and open
 `http://localhost:8080` — the app automatically switches to
-`http://localhost:3000` when opened on localhost.
+`http://localhost:3000/api` when opened on localhost.
 
 ## Structure
 
@@ -54,5 +52,4 @@ Then serve the site from the project root (for example
 - `js/modal.js` — product details and order modal logic
 - `js/slider.js` — bestsellers and reviews slider helper
 - `js/app.js` — API requests, dynamic rendering, pagination, filters
-- `db.json` — mock API data (bouquets, bestsellers, reviews)
 - `images/` — optimized images with @2x retina versions, SVG sprite, favicon

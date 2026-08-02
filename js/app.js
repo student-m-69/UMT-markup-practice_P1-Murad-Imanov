@@ -1,8 +1,8 @@
 (() => {
   const API_URL =
     location.hostname === "localhost" || location.hostname === "127.0.0.1"
-      ? "http://localhost:3000"
-      : "https://my-json-server.typicode.com/student-m-69/UMT-markup-practice_P1-Murad-Imanov";
+      ? "http://localhost:3000/api"
+      : "https://flora-backend-imanov.onrender.com/api";
 
   const state = {
     page: 1,
@@ -20,22 +20,22 @@
 
   const productCard = (item, itemClass, imageClass, size) => `
     <li class="${itemClass}"
-      data-name="${item.name}"
+      data-name="${item.title}"
       data-price="${item.price}"
       data-description="${item.description}"
-      data-image="${item.image}"
-      data-image2x="${item.image2x}"
-      data-alt="${item.alt}">
+      data-image="${item.photoURL}"
+      ${item.photo2xURL ? `data-image2x="${item.photo2xURL}"` : ""}
+      data-alt="${item.title} bouquet">
       <img
         class="${imageClass}"
-        src="${item.image}"
-        srcset="${item.image} 1x, ${item.image2x} 2x"
-        alt="${item.alt}"
+        src="${item.photoURL}"
+        ${item.photo2xURL ? `srcset="${item.photoURL} 1x, ${item.photo2xURL} 2x"` : ""}
+        alt="${item.title} bouquet"
         width="${size.width}"
         height="${size.height}"
         loading="lazy"
       />
-      <h3 class="card-name">${item.name}</h3>
+      <h3 class="card-name">${item.title}</h3>
       <p class="card-price">$${item.price}</p>
     </li>`;
 
@@ -75,7 +75,7 @@
     showMoreButton.classList.add("is-hidden");
     showMessage("Loading bouquets...");
     try {
-      const params = { _page: state.page, _limit: state.limit };
+      const params = { page: state.page, limit: state.limit };
       if (state.category) {
         params.category = state.category;
       }
